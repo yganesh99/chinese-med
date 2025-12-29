@@ -60,7 +60,7 @@ export default function Hero() {
 						</div>
 
 						{/* Stats */}
-						<div className='grid grid-cols-3 gap-6 mt-12 pt-12 border-t border-white/20'>
+						{/* <div className='grid grid-cols-3 gap-6 mt-12 pt-12 border-t border-white/20'>
 							<div>
 								<div className='text-4xl font-bold mb-1'>
 									15+
@@ -85,7 +85,7 @@ export default function Hero() {
 									Success Rate
 								</div>
 							</div>
-						</div>
+						</div> */}
 					</div>
 
 					{/* Right Image */}
@@ -102,7 +102,7 @@ export default function Hero() {
 							</div>
 							<div className='absolute bottom-0 right-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent p-8'>
 								<p className='text-white/90 text-sm mt-1'>
-									Dr. Semira
+									Dr. Semira(TCM)
 								</p>
 							</div>
 						</div>

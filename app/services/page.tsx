@@ -258,7 +258,7 @@ export default function ServicesPage() {
 						</div>
 						<div className='relative h-full rounded-3xl overflow-hidden layer-shadow group'>
 							<Image
-								src='/services/acupuncture-1.jpg'
+								src='/services/acupuncture-4.jpeg'
 								alt='Facial Acupuncture'
 								fill
 								className='object-cover transition-transform duration-700 group-hover:scale-105'

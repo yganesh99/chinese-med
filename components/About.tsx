@@ -57,7 +57,7 @@ export default function About() {
 						<h2 className='text-4xl md:text-5xl font-bold text-foreground mb-8 font-serif'>
 							My Journey in{' '}
 							<span className='gradient-text'>
-								Traditional Medicine
+								Chinese Medicine
 							</span>
 						</h2>
 
@@ -123,7 +123,7 @@ export default function About() {
 							</div>
 							<div className='relative h-48 rounded-2xl overflow-hidden layer-shadow transform hover:-translate-y-1 transition-transform duration-500'>
 								<Image
-									src='/about/image-3.jpg'
+									src='/about/image-4.jpeg'
 									alt='Beijing Visit'
 									fill
 									className='object-cover'

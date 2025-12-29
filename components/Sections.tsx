@@ -239,19 +239,11 @@ export function Philosophy() {
 							<div className='absolute -top-8 -left-8 w-32 h-32 bg-secondary rounded-full opacity-20 blur-3xl'></div>
 							<div className='relative h-[600px] w-full rounded-3xl overflow-hidden layer-shadow-lg'>
 								<Image
-									src='https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=700&h=900&fit=crop'
+									src='/phil-img-1.jpeg'
 									alt='TCM Philosophy'
 									fill
 									className='object-cover'
 								/>
-							</div>
-							<div className='absolute bottom-8 left-8 right-8 bg-white/95 backdrop-blur-md p-6 rounded-2xl layer-shadow'>
-								<p className='text-xl font-semibold text-foreground font-serif mb-2'>
-									天人合一
-								</p>
-								<p className='text-gray-600'>
-									Unity of Heaven and Humanity
-								</p>
 							</div>
 						</div>
 					</div>
@@ -635,16 +627,16 @@ export function Footer() {
 								</span>
 							</div>
 						</div>
-						<p className='text-gray-400 text-sm leading-relaxed'>
+						{/* <p className='text-white text-sm leading-relaxed'>
 							Providing high-quality, local, organic supplements,
 							vitamins and homeopathic remedies to empower health
 							and wellbeing.
-						</p>
+						</p> */}
 					</div>
 
 					<div>
 						<h4 className='font-bold text-lg mb-4'>Quick Links</h4>
-						<ul className='space-y-3 text-sm text-gray-400'>
+						<ul className='space-y-3 text-sm text-white'>
 							<li>
 								<a
 									href='#home'
@@ -690,10 +682,9 @@ export function Footer() {
 
 					<div>
 						<h4 className='font-bold text-lg mb-4'>Services</h4>
-						<ul className='space-y-3 text-sm text-gray-400'>
+						<ul className='space-y-3 text-sm text-white'>
 							<li>Acupuncture</li>
 							<li>Herbal Medicine</li>
-							<li>Tui Na Massage</li>
 							<li>Dietary Therapy</li>
 							<li>Cupping Therapy</li>
 						</ul>
@@ -751,7 +742,7 @@ export function Footer() {
 					</div>
 				</div>
 
-				<div className='border-t border-gray-700 pt-8 text-center text-sm text-gray-400'>
+				<div className='border-t border-gray-700 pt-8 text-center text-sm text-white'>
 					<p>
 						&copy; 2025 Accuwise Chinese Medicine. All rights
 						reserved. | Privacy Policy | Terms of Service

@@ -41,7 +41,7 @@ export default function Home() {
 			/>
 			<Hero />
 			<Philosophy />
-			<Testimonials />
+			{/* <Testimonials /> */}
 			<Footer />
 		</div>
 	);

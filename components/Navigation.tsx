@@ -141,7 +141,7 @@ export default function Navigation({
 
 					{/* Mobile Menu Button */}
 					<button
-						className='md:hidden text-gray-700 hover:text-primary transition-colors'
+						className='md:hidden text-white hover:text-primary transition-colors'
 						onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
 						aria-label='Toggle menu'
 					>
@@ -182,7 +182,7 @@ export default function Navigation({
 									setMobileMenuOpen(false);
 									handleNavigation(sectionId);
 								}}
-								className='block w-full text-left py-3 px-4 text-gray-700 hover:bg-primary hover:text-white transition-colors rounded-lg mb-1'
+								className='block w-full text-left py-3 px-4 text-white hover:bg-primary hover:text-white transition-colors rounded-lg mb-1'
 							>
 								{item}
 							</button>
