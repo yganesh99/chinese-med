@@ -3,19 +3,14 @@
 import { useState, useEffect } from 'react';
 import Navigation from '@/components/Navigation';
 import Hero from '@/components/Hero';
-import {
-	Services,
-	Philosophy,
-	Testimonials,
-	Footer,
-} from '@/components/Sections';
+import { Services, Philosophy, Research, Footer } from '@/components/Sections';
 
 export default function Home() {
 	const [activeSection, setActiveSection] = useState('home');
 
 	useEffect(() => {
 		const handleScroll = () => {
-			const sections = ['home', 'services', 'philosophy', 'testimonials'];
+			const sections = ['home', 'services', 'philosophy', 'research'];
 			const current = sections.find((section) => {
 				const element = document.getElementById(section);
 				if (element) {
@@ -41,7 +36,7 @@ export default function Home() {
 			/>
 			<Hero />
 			<Philosophy />
-			{/* <Testimonials /> */}
+			<Research />
 			<Footer />
 		</div>
 	);

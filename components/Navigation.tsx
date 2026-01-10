@@ -55,7 +55,7 @@ export default function Navigation({
 			return;
 		}
 
-		// For other sections (Philosophy, Testimonials)
+		// For other sections (Philosophy, Research)
 		if (sectionId === 'contact') {
 			router.push('/contact');
 			return;

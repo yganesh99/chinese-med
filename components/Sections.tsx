@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import BookingCalendar from './BookingCalendar';
 
 // Custom hook for scroll reveal
 function useScrollReveal() {
@@ -295,44 +296,43 @@ export function Philosophy() {
 	);
 }
 
-// Testimonials Component
-export function Testimonials() {
+// Research Component
+export function Research() {
 	const [ref, isVisible] = useScrollReveal();
 
-	const testimonials = [
+	const articles = [
 		{
-			name: 'Sarah Mitchell',
-			condition: 'Chronic Back Pain',
-			text: "After years of conventional treatment with no relief, I found healing through acupuncture here. The personalized care and deep understanding have transformed my life. I'm now pain-free and more energetic than ever.",
-			rating: 5,
-			image: 'https://i.pravatar.cc/150?img=1',
+			title: 'Acupuncture For Depression',
+			citation:
+				'Chen, B., Wang, C. C., Lee, K. H., Xia, J. C., & Luo, Z. (2023). Efficacy and safety of acupuncture for depression: A systematic review and meta-analysis. Research in Nursing & Health, 46(1), 48–67.',
+			link: 'https://pmc.ncbi.nlm.nih.gov/articles/PMC10108109/#nur22284-bib-0053',
+			year: '2023',
+			type: 'Systematic Review',
+			image: 'https://images.unsplash.com/photo-1505576399279-565b52d4ac71?w=500&h=400&fit=crop',
 		},
 		{
-			name: 'James Chen',
-			condition: 'Stress & Anxiety',
-			text: 'The holistic approach to my anxiety has been life-changing. The herbal remedies combined with acupuncture have helped me find balance without pharmaceuticals. I feel like myself again.',
-			rating: 5,
-			image: 'https://i.pravatar.cc/150?img=13',
+			title: 'Acupuncture For Anxiety',
+			citation:
+				'Yang, X.-Y., Yang, N.-B., Huang, F.-F., Ren, S., & Li, Z.-J. (2021). Effectiveness of acupuncture on anxiety disorder: A systematic review and meta-analysis of randomised controlled trials. Annals of General Psychiatry, 20, 9.',
+			link: 'https://annals-general-psychiatry.biomedcentral.com/articles/10.1186/s12991-021-00327-5',
+			year: '2021',
+			type: 'Meta-Analysis',
+			image: 'https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=500&h=400&fit=crop',
 		},
 		{
-			name: 'Emily Rodriguez',
-			condition: 'Digestive Issues',
-			text: 'I was skeptical at first, but the dietary therapy and herbal treatments have completely resolved my digestive problems. The practitioners here truly understand the connection between food and health.',
-			rating: 5,
-			image: 'https://i.pravatar.cc/150?img=5',
-		},
-		{
-			name: 'Michael Thompson',
-			condition: 'Sports Injury Recovery',
-			text: "As an athlete, recovery is crucial. The Tui Na massage and acupuncture have accelerated my healing process significantly. I've recommended this clinic to my entire team.",
-			rating: 5,
-			image: 'https://i.pravatar.cc/150?img=12',
+			title: 'Acupuncture For Chronic Pain',
+			citation:
+				'Vickers, A. J., Vertosick, E. A., Lewith, G., MacPherson, H., Foster, N. E., Sherman, K. J., Irnich, D., Witt, C. M., & Linde, K. (2018). Acupuncture for chronic pain: Update of an individual patient data meta-analysis. The Journal of Pain, 19(5), 455–474.',
+			link: 'https://pubmed.ncbi.nlm.nih.gov/29198932/',
+			year: '2018',
+			type: 'Meta-Analysis (Update)',
+			image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=500&h=400&fit=crop',
 		},
 	];
 
 	return (
 		<section
-			id='testimonials'
+			id='research'
 			className='py-24 bg-gradient-to-b from-primary/5 to-white'
 		>
 			<div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
@@ -344,57 +344,74 @@ export function Testimonials() {
 				>
 					<div className='inline-block mb-4'>
 						<span className='bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-semibold uppercase tracking-wide'>
-							Testimonials
+							Science & Evidence
 						</span>
 					</div>
 					<h2 className='text-5xl md:text-6xl font-bold text-foreground mb-6'>
-						Patient{' '}
-						<span className='gradient-text'>Success Stories</span>
+						Research{' '}
+						<span className='gradient-text'>Publications</span>
 					</h2>
 					<p className='text-xl text-gray-600 max-w-3xl mx-auto'>
-						Real experiences from real people who found healing and
-						wellness
+						Scientific studies supporting the efficacy of
+						Acupuncture and Traditional Chinese Medicine
 					</p>
 				</div>
 
-				<div className='grid md:grid-cols-2 gap-8'>
-					{testimonials.map((testimonial, index) => (
+				<div className='grid lg:grid-cols-3 gap-8'>
+					{articles.map((article, index) => (
 						<div
 							key={index}
-							className='bg-white/50 backdrop-blur-sm layer-shadow-lg rounded-3xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl bg-card'
+							className='bg-white/50 backdrop-blur-sm layer-shadow-lg rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl bg-card flex flex-col h-full group'
 						>
-							<div className='flex items-center mb-6'>
-								<div className='relative w-16 h-16 rounded-full overflow-hidden layer-shadow mr-4'>
-									<Image
-										src={testimonial.image}
-										alt={testimonial.name}
-										fill
-										className='object-cover'
-									/>
-								</div>
-								<div>
-									<h3 className='text-xl font-bold text-foreground'>
-										{testimonial.name}
-									</h3>
-									<p className='text-sm text-primary font-medium'>
-										{testimonial.condition}
-									</p>
+							<div className='relative h-48 w-full overflow-hidden'>
+								<Image
+									src={article.image}
+									alt={article.title}
+									fill
+									className='object-cover transition-transform duration-700 group-hover:scale-110'
+								/>
+								<div className='absolute top-4 right-4 bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider text-secondary layer-shadow'>
+									{article.type}
 								</div>
 							</div>
-							<div className='flex mb-4'>
-								{[...Array(testimonial.rating)].map((_, i) => (
+
+							<div className='p-8 flex flex-col grow'>
+								<div className='flex items-center justify-between mb-4'>
+									<span className='text-sm text-gray-500 font-medium'>
+										{article.year}
+									</span>
+								</div>
+
+								<h3 className='text-xl font-bold text-foreground mb-4 leading-tight'>
+									{article.title}
+								</h3>
+
+								<p className='text-gray-600 text-sm leading-relaxed mb-6 grow'>
+									{article.citation}
+								</p>
+
+								<a
+									href={article.link}
+									target='_blank'
+									rel='noreferrer'
+									className='inline-flex items-center text-primary font-semibold hover:text-primary-dark transition-colors mt-auto'
+								>
+									Read Full Study
 									<svg
-										key={i}
-										className='w-5 h-5 text-accent fill-current'
-										viewBox='0 0 20 20'
+										className='w-4 h-4 ml-2 transition-transform duration-300 group-hover:translate-x-1'
+										fill='none'
+										stroke='currentColor'
+										viewBox='0 0 24 24'
 									>
-										<path d='M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z' />
+										<path
+											strokeLinecap='round'
+											strokeLinejoin='round'
+											strokeWidth={2}
+											d='M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14'
+										/>
 									</svg>
-								))}
+								</a>
 							</div>
-							<p className='text-gray-700 leading-relaxed italic'>
-								&ldquo;{testimonial.text}&rdquo;
-							</p>
 						</div>
 					))}
 				</div>
@@ -531,70 +548,8 @@ export function Contact() {
 						</div>
 					</div>
 
-					<div className='bg-card layer-shadow-lg rounded-3xl p-8 md:p-10'>
-						<h3 className='text-3xl font-bold text-foreground mb-8'>
-							Book Your Consultation
-						</h3>
-						<form className='space-y-6'>
-							<div>
-								<label className='block text-sm font-semibold text-gray-700 mb-2'>
-									Full Name
-								</label>
-								<input
-									type='text'
-									className='w-full px-4 py-3.5 rounded-xl layer-inset border border-gray-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all'
-									placeholder='John Smith'
-								/>
-							</div>
-							<div>
-								<label className='block text-sm font-semibold text-gray-700 mb-2'>
-									Email Address
-								</label>
-								<input
-									type='email'
-									className='w-full px-4 py-3.5 rounded-xl layer-inset border border-gray-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all'
-									placeholder='john@example.com'
-								/>
-							</div>
-							<div>
-								<label className='block text-sm font-semibold text-gray-700 mb-2'>
-									Phone Number
-								</label>
-								<input
-									type='tel'
-									className='w-full px-4 py-3.5 rounded-xl layer-inset border border-gray-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all'
-									placeholder='(03) 1234 5678'
-								/>
-							</div>
-							<div>
-								<label className='block text-sm font-semibold text-gray-700 mb-2'>
-									Service of Interest
-								</label>
-								<select className='w-full px-4 py-3.5 rounded-xl layer-inset border border-gray-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all'>
-									<option>Acupuncture</option>
-									<option>Herbal Medicine</option>
-									<option>Tui Na Massage</option>
-									<option>Dietary Therapy</option>
-									<option>General Consultation</option>
-								</select>
-							</div>
-							<div>
-								<label className='block text-sm font-semibold text-gray-700 mb-2'>
-									Message
-								</label>
-								<textarea
-									rows={4}
-									className='w-full px-4 py-3.5 rounded-xl layer-inset border border-gray-200 focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none'
-									placeholder='Tell me about your health concerns...'
-								></textarea>
-							</div>
-							<button
-								type='submit'
-								className='w-full bg-primary hover:bg-primary-dark text-white font-bold py-4 px-8 rounded-xl uppercase text-sm tracking-wide transition-all duration-300 hover:shadow-xl hover:-translate-y-1'
-							>
-								Submit Request
-							</button>
-						</form>
+					<div className='bg-primary/5 rounded-3xl p-2 md:p-4'>
+						<BookingCalendar />
 					</div>
 				</div>
 			</div>
@@ -663,10 +618,10 @@ export function Footer() {
 							</li>
 							<li>
 								<a
-									href='#testimonials'
+									href='#research'
 									className='hover:text-primary transition-colors'
 								>
-									Testimonials
+									Research
 								</a>
 							</li>
 							<li>
